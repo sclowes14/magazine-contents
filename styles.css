@@ -1,0 +1,181 @@
+:root {
+    --josefin: 'Josefin Sans', sans-serif;
+    --abril-fatface: 'Abril Fatface', serif;
+}
+
+html {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    margin: 1rem;
+}
+
+h1, h3, h4 {
+    font-family: var(--josefin);
+}
+
+h2 {
+    font: 1.8em var(--abril-fatface);
+    text-transform: lowercase;
+    line-height: 1;
+}
+
+h3, h4 {
+    font-size: 1em;
+    letter-spacing: .1em;
+}
+
+header, h3, h4{
+    text-transform: uppercase;
+}
+
+figure {
+    margin: 0 0 1em 0;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+header {
+    margin: 3em 0;
+}
+
+header h1,
+header p {
+    margin: 0;
+}
+
+header h1 {
+    font-weight: 100;
+    font-size: 3em;
+}
+
+header p {
+    display: inline-block;
+    padding-right: .5em;
+    border-right: 1px solid;
+    margin-right: .5em;
+    font: 700 .9em var(--josefin);
+    letter-spacing: .1em;
+}
+
+header p:last-child {
+    border: none;
+}
+
+section ul {
+    list-style: none;
+    padding: 0;
+}
+
+figure {
+    position: relative;
+}
+
+figcaption {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: .2em;
+    font: 100 2em var(--josefin);
+    text-transform: uppercase;
+    text-align: right;
+    background-color: rgba(0, 0, 0, .5);
+    color: white;
+}
+
+article {
+    margin: 1em 0;
+}
+
+article h3,
+article p {
+    display: inline;
+}
+
+.item-c {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.item-c section,
+.item-c footer {
+    flex-basis: calc(50% - .5em);
+}
+
+footer {
+    text-align: center;
+}
+
+footer p {
+    font: 700 .9em var(--josefin);
+    text-transform: uppercase;
+    letter-spacing: .1em;
+}
+
+footer span {
+    font-weight: initial;
+}
+
+@media (min-width: 550px) {
+    .features {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: -1em;
+    }
+
+    figure {
+        flex-basis: calc(50% - .5em);
+    }
+
+    .item-a, 
+    .item-b {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .item-a section,
+    .item-b section {
+        flex-basis: calc(50% - .5em);
+    }
+  }
+
+  @media (min-width: 1000px) {
+    .features {
+        grid-area: features;
+    }
+
+    .item-a {
+        grid-area: sidebar;
+        align-self: start;
+    }
+
+    .item-a section {
+        flex-basis: initial;
+    }
+
+    .item-b {
+        grid-area: area1;
+    }
+
+    .item-c {
+        grid-area: area2;
+        flex-direction: row-reverse;
+    }
+
+    main {
+        display: grid;
+        grid: 
+            "features features features features sidebar" auto
+            "area2 area2 area1 area1 sidebar" auto
+            / 1fr 1fr 1fr 1fr 1fr;
+        column-gap: 1em;
+    }
+  }
